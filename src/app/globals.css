@@ -1,26 +1,259 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* 전투적 방어 컨셉 - 다크 테마 */
+
+    /* Custom Brand Colors */
+    --battle-red: 220 38 38;
+    --victory-gold: 251 191 36;
+
+    /* Tailwind Colors in RGB */
+    --slate-900: 15 23 42;
+    --slate-800: 30 41 59;
+    --slate-700: 51 65 85;
+    --slate-600: 71 85 105;
+    --slate-500: 100 116 139;
+    --slate-400: 148 163 184;
+    --slate-300: 203 213 225;
+    --slate-200: 226 232 240;
+    --slate-100: 241 245 249;
+    --slate-50: 248 250 252;
+
+    /* Semantic Colors for shadcn/ui */
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+    --primary: 220 38 38;
+    --primary-foreground: 248 250 252;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 251 191 36;
+    --accent-foreground: 15 23 42;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 251 191 36;
+    --radius: 0.5rem;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-color: rgb(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(30 41 59);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(51 65 85);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(71 85 105);
+}
+
+/* Selection */
+::selection {
+  background: rgb(251 191 36);
+  color: rgb(15 23 42);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid rgb(251 191 36);
+  outline-offset: 2px;
+}
+
+/* Component Base Styles */
+@layer components {
+  /* Card styles */
+  .card {
+    background-color: rgb(var(--card));
+    color: rgb(var(--card-foreground));
+    border-radius: var(--radius);
+  }
+
+  /* Button base styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  /* Badge styles */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+/* Utility overrides for proper display */
+@layer utilities {
+  /* Text colors */
+  .text-primary {
+    color: rgb(var(--primary));
+  }
+
+  .text-secondary {
+    color: rgb(var(--secondary));
+  }
+
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+
+  .text-muted {
+    color: rgb(var(--muted-foreground));
+  }
+
+  /* Background colors */
+  .bg-primary {
+    background-color: rgb(var(--primary));
+  }
+
+  .bg-secondary {
+    background-color: rgb(var(--secondary));
+  }
+
+  .bg-accent {
+    background-color: rgb(var(--accent));
+  }
+
+  .bg-card {
+    background-color: rgb(var(--card));
+  }
+
+  /* Border colors */
+  .border-primary {
+    border-color: rgb(var(--primary));
+  }
+
+  .border-secondary {
+    border-color: rgb(var(--secondary));
+  }
+
+  .border-accent {
+    border-color: rgb(var(--accent));
+  }
+
+  /* Ring colors */
+  .ring-primary {
+    --tw-ring-color: rgb(var(--primary));
+  }
+
+  .ring-accent {
+    --tw-ring-color: rgb(var(--accent));
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(180deg, rgb(var(--background)), rgb(var(--card)));
+}
+
+/* Glass morphism effects */
+.glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive font sizes */
+@layer base {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
 }

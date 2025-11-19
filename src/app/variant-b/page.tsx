@@ -1,5 +1,5 @@
 import Navigation from "@/components/sections/Navigation";
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSectionVariantB from "@/components/sections/HeroSectionVariantB";
 import ProblemSection from "@/components/sections/ProblemSection";
 import SolutionSection from "@/components/sections/SolutionSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -9,11 +9,11 @@ import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function VariantB() {
   return (
     <main className="min-h-screen bg-slate-900">
       <Navigation />
-      <HeroSection />
+      <HeroSectionVariantB />
       <ProblemSection />
       <SolutionSection />
       <FeaturesSection />

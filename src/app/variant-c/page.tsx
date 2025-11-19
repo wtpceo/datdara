@@ -1,24 +1,22 @@
 import Navigation from "@/components/sections/Navigation";
-import HeroSection from "@/components/sections/HeroSection";
-import ProblemSection from "@/components/sections/ProblemSection";
+import HeroSectionVariantC from "@/components/sections/HeroSectionVariantC";
 import SolutionSection from "@/components/sections/SolutionSection";
+import CaseStudySectionVariantC from "@/components/sections/CaseStudySectionVariantC";
 import FeaturesSection from "@/components/sections/FeaturesSection";
-import CaseStudySection from "@/components/sections/CaseStudySection";
-import PricingSection from "@/components/sections/PricingSection";
+import PricingSectionVariantC from "@/components/sections/PricingSectionVariantC";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function VariantC() {
   return (
-    <main className="min-h-screen bg-slate-900">
+    <main className="min-h-screen bg-slate-950">
       <Navigation />
-      <HeroSection />
-      <ProblemSection />
+      <HeroSectionVariantC />
       <SolutionSection />
+      <CaseStudySectionVariantC />
       <FeaturesSection />
-      <CaseStudySection />
-      <PricingSection />
+      <PricingSectionVariantC />
       <FAQSection />
       <CTASection />
       <Footer />

@@ -141,8 +141,9 @@ export default function HeroSectionVariantC() {
                     <span className="text-red-400">진짜 잠 안옴 ㅋㅋㅋ</span>
                   </h1>
 
-                  <p className="text-xl md:text-2xl text-gray-400 mb-8">
-                    근데 이제 댓다라가 알아서 답변 달아주거나 숨겨줌
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-400 mb-8 px-4">
+                    근데 이제 댓다라가 알아서<br className="md:hidden" />
+                    답변 달아주거나 숨겨줌
                   </p>
                 </motion.div>
               </motion.div>

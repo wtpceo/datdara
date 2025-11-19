@@ -100,11 +100,11 @@ export default function SolutionSection() {
           viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            댓다라가 <span className="text-yellow-400">모든 문제</span>를 해결합니다
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white mb-4 px-2">
+            댓다라가 <span className="text-yellow-400">모든 문제</span>를<br className="md:hidden" /> 해결합니다
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            리뷰 답변 자동화 + 징검다리 답변 전략 + 별점 숨기기 = 재주문율 상승 & 평점 보호
+          <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto px-4 leading-relaxed">
+            리뷰 답변 자동화 + 징검다리 답변 전략 +<br className="sm:hidden" /> 별점 숨기기 =<br className="sm:hidden" /> 재주문율 상승 & 평점 보호
           </p>
         </motion.div>
 
@@ -175,8 +175,8 @@ export default function SolutionSection() {
         >
           <Card className="bg-gradient-to-r from-red-900/20 via-yellow-900/20 to-green-900/20 border-2 border-yellow-600/30">
             <CardContent className="p-8 text-center">
-              <div className="text-2xl md:text-3xl font-bold text-white">
-                재주문율 ↑ + 평점 ↑ = 배민 노출 ↑ = <span className="text-yellow-400">매출 ↑</span>
+              <div className="text-lg md:text-2xl lg:text-3xl font-bold text-white px-4 leading-relaxed">
+                재주문율 ↑ + 평점 ↑ =<br className="sm:hidden" /> 배민 노출 ↑ =<br className="sm:hidden" /> <span className="text-yellow-400">매출 ↑</span>
               </div>
             </CardContent>
           </Card>

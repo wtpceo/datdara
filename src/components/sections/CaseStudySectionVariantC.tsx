@@ -165,11 +165,11 @@ export default function CaseStudySectionVariantC() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="inline-block bg-slate-800/50 border border-slate-700 rounded-full px-6 py-3">
-            <span className="text-gray-400">
-              "이 가격에 이 효과면 ㄹㅇ 개꿀"
-              <span className="text-yellow-400 ml-2">- 500+ 사장님들의 선택</span>
-            </span>
+          <div className="inline-block bg-slate-800/50 border border-slate-700 rounded-full px-4 md:px-6 py-3 max-w-full mx-2">
+            <div className="text-sm md:text-base text-gray-400 flex flex-col sm:flex-row items-center gap-1 sm:gap-0">
+              <span>"이 가격에 이 효과면 ㄹㅇ 개꿀"</span>
+              <span className="text-yellow-400 sm:ml-2">- 500+ 사장님들이 선택</span>
+            </div>
           </div>
         </motion.div>
       </div>

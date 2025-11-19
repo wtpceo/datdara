@@ -137,7 +137,7 @@ export default function PricingSectionVariantC() {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm md:text-base">
+                        <span className="text-gray-300 text-base md:text-lg font-medium">
                           {feature}
                         </span>
                       </li>
@@ -170,29 +170,29 @@ export default function PricingSectionVariantC() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <Card className="bg-gradient-to-r from-green-900/20 via-blue-900/20 to-purple-900/20 border-2 border-green-600/30 p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <Card className="bg-gradient-to-r from-green-900/20 via-blue-900/20 to-purple-900/20 border-2 border-green-600/30 p-6 md:p-8 text-center">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
               간단한 계산
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-left">
               <div>
-                <div className="text-gray-400 text-sm mb-1">하루 절약 시간</div>
-                <div className="text-2xl font-bold text-green-400">2시간</div>
+                <div className="text-gray-400 text-xs md:text-sm mb-1">하루 절약 시간</div>
+                <div className="text-xl md:text-2xl font-bold text-green-400">2시간</div>
               </div>
               <div>
-                <div className="text-gray-400 text-sm mb-1">월 비용 (프로)</div>
-                <div className="text-2xl font-bold text-yellow-400">₩79,000</div>
+                <div className="text-gray-400 text-xs md:text-sm mb-1">월 비용 (프로)</div>
+                <div className="text-xl md:text-2xl font-bold text-yellow-400">₩49,000</div>
               </div>
               <div>
-                <div className="text-gray-400 text-sm mb-1">시급 환산</div>
-                <div className="text-2xl font-bold text-blue-400">₩1,316</div>
+                <div className="text-gray-400 text-xs md:text-sm mb-1">시급 환산</div>
+                <div className="text-xl md:text-2xl font-bold text-blue-400">₩816</div>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-slate-700">
-              <p className="text-gray-300 text-lg">
-                시급 1,316원에 <span className="text-yellow-400 font-bold">24시간 일하는 직원</span> 고용하는 셈
+              <p className="text-gray-300 text-base md:text-lg px-2">
+                시급 816원에 <span className="text-yellow-400 font-bold">24시간 일하는 직원</span> 고용하는 셈
               </p>
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="text-gray-500 text-xs md:text-sm mt-2 px-2">
                 알바 한명 쓰면 월 200만원인데 ㅋㅋ
               </p>
             </div>

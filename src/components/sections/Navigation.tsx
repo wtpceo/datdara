@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import Logo from "@/components/Logo";
 
 export default function Navigation() {
@@ -25,16 +25,22 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const navItems = [
+    { id: "features", label: "기능" },
+    { id: "pricing", label: "가격" },
+    { id: "faq", label: "FAQ" }
+  ];
+
   return (
     <>
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-800"
+            ? "bg-neutral-950/90 backdrop-blur-xl border-b border-neutral-800/50"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
@@ -47,48 +53,22 @@ export default function Navigation() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center gap-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-neutral-400 hover:text-white px-4 py-2 rounded-lg transition-colors font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
               <button
-                onClick={() => scrollToSection("problem")}
-                className="text-gray-300 hover:text-white transition-colors"
+                onClick={() => window.open('http://pf.kakao.com/_xmhWxin/chat', '_blank')}
+                className="ml-4 bg-red-500 hover:bg-red-600 text-white px-5 py-2.5 rounded-xl font-bold transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-red-500/20"
               >
-                문제
-              </button>
-              <button
-                onClick={() => scrollToSection("solution")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                솔루션
-              </button>
-              <button
-                onClick={() => scrollToSection("features")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                기능
-              </button>
-              <button
-                onClick={() => scrollToSection("case-study")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                사례
-              </button>
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                가격
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                FAQ
-              </button>
-              <button
-                onClick={() => scrollToSection("cta")}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
-              >
-                무료 시작하기
+                <Zap className="w-4 h-4" />
+                무료 시작
               </button>
             </div>
 
@@ -96,7 +76,7 @@ export default function Navigation() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-300 hover:text-white"
+                className="text-neutral-400 hover:text-white p-2"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -109,52 +89,30 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div
-            className="fixed inset-0 bg-black/50"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed right-0 top-0 h-full w-64 bg-slate-900 p-6 pt-20">
-            <div className="flex flex-col space-y-4">
+          <div className="fixed right-0 top-0 h-full w-72 bg-neutral-900 border-l border-neutral-800 p-6 pt-20">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-neutral-300 hover:text-white hover:bg-neutral-800 px-4 py-3 rounded-xl transition-all text-left font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <div className="h-px bg-neutral-800 my-4" />
               <button
-                onClick={() => scrollToSection("problem")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
+                onClick={() => {
+                  window.open('http://pf.kakao.com/_xmhWxin/chat', '_blank');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
               >
-                문제
-              </button>
-              <button
-                onClick={() => scrollToSection("solution")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
-              >
-                솔루션
-              </button>
-              <button
-                onClick={() => scrollToSection("features")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
-              >
-                기능
-              </button>
-              <button
-                onClick={() => scrollToSection("case-study")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
-              >
-                사례
-              </button>
-              <button
-                onClick={() => scrollToSection("pricing")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
-              >
-                가격
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-gray-300 hover:text-white transition-colors text-left"
-              >
-                FAQ
-              </button>
-              <button
-                onClick={() => scrollToSection("cta")}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors mt-4"
-              >
-                무료 시작하기
+                <Zap className="w-4 h-4" />
+                3일 무료 시작하기
               </button>
             </div>
           </div>

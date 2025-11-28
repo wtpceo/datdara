@@ -12,13 +12,13 @@ export default function PricingSection() {
       description: "리뷰 자동 답변만 필요한 분",
       badge: null,
       features: [
-        { text: "5개 플랫폼 리뷰 자동 답변", included: true },
-        { text: "AI 맞춤 답변 생성", included: true },
-        { text: "매장 톤앤매너 학습", included: true },
-        { text: "24시간 모니터링", included: true },
-        { text: "카카오톡 알림", included: true },
-        { text: "악성 리뷰 자동 숨김", included: false },
-        { text: "전략적 답변 타이밍", included: false }
+        { text: "5개 플랫폼 리뷰 자동 답변", included: true, highlight: false },
+        { text: "AI 맞춤 답변 생성", included: true, highlight: false },
+        { text: "매장 톤앤매너 학습", included: true, highlight: false },
+        { text: "24시간 모니터링", included: true, highlight: false },
+        { text: "카카오톡 알림", included: true, highlight: false },
+        { text: "악성 리뷰 자동 숨김", included: false, highlight: false },
+        { text: "전략적 답변 타이밍", included: false, highlight: false }
       ],
       buttonStyle: "bg-neutral-800 hover:bg-neutral-700 text-white",
       borderStyle: "border-neutral-800"
@@ -29,13 +29,13 @@ export default function PricingSection() {
       description: "악성 리뷰 숨김까지 원하는 분",
       badge: "추천",
       features: [
-        { text: "5개 플랫폼 리뷰 자동 답변", included: true },
-        { text: "AI 맞춤 답변 생성", included: true },
-        { text: "매장 톤앤매너 학습", included: true },
-        { text: "24시간 모니터링", included: true },
-        { text: "카카오톡 알림", included: true },
+        { text: "5개 플랫폼 리뷰 자동 답변", included: true, highlight: false },
+        { text: "AI 맞춤 답변 생성", included: true, highlight: false },
+        { text: "매장 톤앤매너 학습", included: true, highlight: false },
+        { text: "24시간 모니터링", included: true, highlight: false },
+        { text: "카카오톡 알림", included: true, highlight: false },
         { text: "악성 리뷰 자동 숨김 (배민/쿠팡)", included: true, highlight: true },
-        { text: "월/수/금 전략적 답변", included: true }
+        { text: "월/수/금 전략적 답변", included: true, highlight: false }
       ],
       buttonStyle: "bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white shadow-lg shadow-red-500/25",
       borderStyle: "border-yellow-500/40"
